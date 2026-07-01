@@ -24,6 +24,20 @@ This project analyzes public sentiment about Tesla using 20 manually collected t
 - **Google Sheets API**: For data storage
 - **VS Code**: Development environment
 
+## Local Setup
+Keep service-account files and API keys outside the repository. Before running
+the dashboard, set the Google Sheets values in your local shell:
+
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
+export GOOGLE_SHEET_ID=your-google-sheet-id
+```
+
+If real Twitter/X or Google credentials were committed in an earlier revision,
+rotate them in the provider dashboard before using this project again. The
+current code path only needs Google Sheets settings because the sample workflow
+processes `manual_sentiment_log.csv`.
+
 ## Challenges Overcome
 - **API Limitation**: Bypassed Twitter API access issues by manually collecting tweets.
 - **Sentiment Accuracy**: Explored preprocessing techniques to improve TextBlob’s sentiment classification; noted potential for refinement.
