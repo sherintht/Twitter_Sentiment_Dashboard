@@ -1,7 +1,13 @@
-# config.py
-API_KEY = "MSwxhsderdfbSaW8vAVQ2OjTWo59Jla"  # From Developer Portal
-API_SECRET = "0iiHfdsfsdCOvvKzohj48NXhEMR3sjH3gUp0HddkGdUjfFpLSArjg4AI"
-ACCESS_TOKEN = "1917816fdf134352490496-bKAfaf7SnOfIZgItAveEFWog7Oe5GkNyEY"
-ACCESS_TOKEN_SECRET = "wNHX40eCvtWw2arSqTmqxFfafaU1kCYT4Jy4JKIH8btcnq2uz"
-BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAKneadFEF50wEAAAAA%2BNX6tuo6BS09dZwO7NZnaD5vKWI%3DgeUKNAup4HK9toAyyHbrSj1kxBPFYx2gFDF1AGeC1ZyRw9q8uP"
-SHEET_ID ="1AeSCXZCzcAVgOlCwnXP21J7NagaMYUINDv5MPaNBgHsxI1q-xls"
+"""Local configuration for Google Sheets output.
+
+Keep real credential values outside git. Set these environment variables before
+running `sentiment_dashboard.py`:
+
+- `GOOGLE_APPLICATION_CREDENTIALS`: path to a Google service-account JSON file.
+- `GOOGLE_SHEET_ID`: destination spreadsheet ID.
+"""
+
+import os
+
+GC_SHEET_KEY = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "service-account.json")
+SHEET_ID = os.getenv("GOOGLE_SHEET_ID", "")
